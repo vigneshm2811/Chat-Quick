@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Image from "next/image";
@@ -28,20 +27,18 @@ const DekstopNav = () => {
             return (
               <li key={id} className="relative">
                 <Link href={path.href}>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          size="icon"
-                          variant={path?.active ? "default" : "outline"}>
-                          {path?.active ? path?.activeIcon : path?.icon}
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{path?.name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        size="icon"
+                        variant={path?.active ? "default" : "outline"}>
+                        {path?.active ? path?.activeIcon : path?.icon}
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{path?.name}</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </Link>
               </li>
             );

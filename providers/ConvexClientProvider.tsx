@@ -9,7 +9,6 @@ import {
 } from "@clerk/clerk-react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 import { ConvexReactClient } from "convex/react";
-import LoadingLogo from "@/components/shared/LoadingLogo";
 
 type Props = {
   children: React.ReactNode;

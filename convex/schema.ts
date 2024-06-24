@@ -10,4 +10,10 @@ export default defineSchema({
   })
     .index("by_email", ["email"])
     .index("by_clerkId", ["clerkId"]),
+  requests: defineTable({
+    sender: v.id("user"),
+    receiver: v.id("user"),
+  })
+    .index("by_receiver", ["receiver"])
+    .index("by_receiver_sender", ["receiver", "sender"]),
 });
